@@ -12,6 +12,9 @@ function getComputerChoice() {
 }
 
 function roundPlay(playerSelection, computerSelection) {
+
+    playerSelection = playerSelection.toLowerCase();
+
     switch (playerSelection + "-" + computerSelection) {
         case "rock-rock":
             return "Tie!";
@@ -35,9 +38,40 @@ function roundPlay(playerSelection, computerSelection) {
             return "Win!";
 
         case "paper-scissors":
-            return "Lose";
+            return "Lose!";
         
         case "scissors-scissors":
             return "Tie!";
     }
 }
+
+function game() {
+    let wins = 0;
+    let loses = 0;
+    for (let i = 0; i < 5; i++) {
+        let player_choice = prompt("Your choice:");
+        let round_result = roundPlay(player_choice, getComputerChoice());
+        if (round_result === "Win!") {
+            wins++;
+        }
+        else if (round_result === "Lose!") {
+            loses++;
+        }
+        else {
+            continue;
+        }
+    }
+
+    if (wins > loses) {
+        alert("You won!");
+    }
+    else if (wins < loses) {
+        alert("You lost!");
+    }
+    else {
+        alert("You lost!");
+    }
+}
+
+game();
+

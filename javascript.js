@@ -46,32 +46,58 @@ function roundPlay(playerSelection, computerSelection) {
 }
 
 function game() {
+    let rock_button = document.querySelector('#rock')
+    let paper_button = document.querySelector('#paper')
+    let scissors_button = document.querySelector('#scissors')
     let wins = 0;
     let loses = 0;
-    for (let i = 0; i < 5; i++) {
-        let player_choice = prompt("Your choice:");
-        let round_result = roundPlay(player_choice, getComputerChoice());
-        if (round_result === "Win!") {
-            wins++;
+
+    function addPoint(result) {
+        if (result === 'Win!') {
+            wins = wins + 1;
+            document.querySelector('.wins').textContent = wins;
+            if (wins == 5) {
+                alert('You won!');
+                document.querySelector('.wins').textContent = 0;
+                document.querySelector('.loses').textContent = 0;
+                wins = 0
+                loses = 0
+            }
         }
-        else if (round_result === "Lose!") {
-            loses++;
-        }
-        else {
-            continue;
+        else if (result === 'Lose!') {
+            loses = loses + 1;
+            document.querySelector('.loses').textContent = loses;
+            if (loses == 5) {
+                alert('You lost!');
+                document.querySelector('.wins').textContent = 0;
+                document.querySelector('.loses').textContent = 0;
+                wins = 0
+                loses = 0
+            }
+            
         }
     }
 
-    if (wins > loses) {
-        alert("You won!");
-    }
-    else if (wins < loses) {
-        alert("You lost!");
-    }
-    else {
-        alert("You lost!");
-    }
+    rock_button.addEventListener('click', function(e) {
+        let result = roundPlay(this.value, getComputerChoice());
+        addPoint(result);
+    })
+
+    paper_button.addEventListener('click', function(e) {
+        let result = roundPlay(this.value, getComputerChoice());
+        addPoint(result);
+    })
+
+    scissors_button.addEventListener('click', function(e) {
+        let result = roundPlay(this.value, getComputerChoice());
+        addPoint(result);
+    }) 
+    
 }
 
 game();
+
+
+
+
 

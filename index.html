@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock! Paper! Scissors!</title>
 </head>
 <body>
     <div class="buttons">
-        <button id="rock" value="rock">Rock</button>
-        <button id="paper" value="paper">Paper</button>
-        <button id="scissors" value="scissors">Scissors</button>
+        <button id="rock" value="rock">🪨</button>
+        <button id="paper" value="paper">📰</button>
+        <button id="scissors" value="scissors">✂</button>
     </div>
-    <div>
+    <div class="scorer">
         <div class="text">Score</div>
-        <div class="wins">0</div>
-        <div class="loses">0</div>
-        <div class="result"></div>
+        <div class="score_container">
+            <div class="wins-recorder">
+                <div>Wins:</div>
+                <div class="wins">0</div>
+            </div>
+            <div class="loses-recorder">
+                <div>Loses:</div>
+                <div class="loses">0</div>
+            </div>
+            
+            
+        </div>
+        
     </div>
     <script src="javascript.js"></script>
 </body>

@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    font-size: 80px;
+    text-align: center;
+}
+
+.buttons {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#rock {
+    padding-top: 20px;
+}
+
+.scorer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.text {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.score_container {
+    display: flex;
+    gap: 50px;
+}
+
+.wins-recorder {
+    display: flex;
+    gap: 5px;
+    font-size: 35px;
+}
+
+.loses-recorder {
+    display: flex;
+    gap: 5px;
+    font-size: 35px;
+}
+
